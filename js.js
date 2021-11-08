@@ -39,7 +39,7 @@ function checkGuess() {
   guessField.value = '';
   guessField.focus();
 }
-guessSubmit.addeventListener('click', checkGuess);
+guessSubmit.addeventListener('click', checkGuess); //first error is in this line.
 
 function setGameOver() {
     guessField.disabled = true;

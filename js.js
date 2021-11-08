@@ -39,7 +39,7 @@ function checkGuess() {
   guessField.value = '';
   guessField.focus();
 }
-guessSubmit.addeventListener('click', checkGuess); //fixed this line, changed "addeventListener" to "addEventListener". Captial E was missing.
+guessSubmit.addEventListener('click', checkGuess); //fixed this line, changed "addeventListener" to "addEventListener". Captial E was missing.
 
 function setGameOver() {
     guessField.disabled = true;

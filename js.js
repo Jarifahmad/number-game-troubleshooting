@@ -1,8 +1,8 @@
-let randomNumber = Math.floor(Math.random()) + 1;
-
+let randomNumber = Math.floor(Math.random()) + 1; //issue here - fixed 
+console.log(randomNumber);
 const guesses = document.querySelector('.guesses');
 const lastResult = document.querySelector('.lastResult');
-const lowOrHi = document.querySelector('lowOrHi');
+const lowOrHi = document.querySelector('.lowOrHi'); // ---- issue here, fixed. Didn't include the "." for "lowOrHi"
 const guessSubmit = document.querySelector('.guessSubmit');
 const guessField = document.querySelector('.guessField');
 
@@ -31,7 +31,7 @@ function checkGuess() {
     if(userGuess < randomNumber) {
       lowOrHi.textContent = 'Last guess was too low!';
     } else if(userGuess > randomNumber) {
-      lowOrHi.textContent = 'Last guess was too high!';
+      lowOrHi.textContent = 'Last guess was too high!'; //second error - 
     }
   }
 
@@ -39,7 +39,7 @@ function checkGuess() {
   guessField.value = '';
   guessField.focus();
 }
-guessSubmit.addEventListener('click', checkGuess); //fixed this line, changed "addeventListener" to "addEventListener". Captial E was missing.
+guessSubmit.addEventListener('click', checkGuess); //first error - fixed this line, changed "addeventListener" to "addEventListener". Captial E was missing.
 
 function setGameOver() {
     guessField.disabled = true;
@@ -47,7 +47,7 @@ function setGameOver() {
     resetButton = document.createElement('button');
     resetButton.textContent = 'Start new game';
     document.body.appendChild(resetButton);
-    resetButton.addeventListener('click', resetGame);
+    resetButton.addEventListener('click', resetGame); //fixed issue here as well, didn't includ captial E for EventLister
 }
 
 function resetGame() {
@@ -66,5 +66,6 @@ function resetGame() {
 
     lastResult.style.backgroundColor = 'white';
 
-    randomNumber = Math.floor(Math.random()) + 1;
+    randomNumber = Math.floor(Math.random()*100) +1; //issue here - fixed
+    console.log(randomNumber);
 }
